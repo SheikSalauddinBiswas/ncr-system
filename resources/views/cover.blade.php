@@ -39,7 +39,7 @@
         </li>
         <!-- <li><a href="#section5">Video</a></li> -->
         <li><a href="#section6">Contact</a></li>
-        <li><a href="" class="external">LogIn / SignUp</a></li>
+        <li><a href="{{url('/signin')}}" class="external">LogIn / SignUp</a></li>
       </ul>
     </nav>
   </header>

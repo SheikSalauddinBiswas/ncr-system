@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('cover');
 });
-
+Route::get('/signin', function () {
+    return view('user.signin');
+});
+Route::get('/signup', function () {
+    return view('user.signup');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('home');
-Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');

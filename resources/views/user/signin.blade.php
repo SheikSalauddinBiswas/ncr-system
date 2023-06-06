@@ -15,19 +15,15 @@
 	<body>
 	<section class="ftco-section">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #07</h2>
-				</div>
-			</div>
+			
 			<div class="row justify-content-center">
 				<div class="col-md-12 col-lg-10">
 					<div class="wrap d-md-flex">
 						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
 							<div class="text w-100">
-								<h2>Welcome to login</h2>
+								<h2>Welcome to NCR-SYSTEM</h2>
 								<p>Don't have an account?</p>
-								<a href="#" class="btn btn-white btn-outline-white">Sign Up</a>
+								<a href="{{url('/signup')}}" class="btn btn-white btn-outline-white">Sign Up</a>
 							</div>
 			      </div>
 						<div class="login-wrap p-4 p-lg-5">
