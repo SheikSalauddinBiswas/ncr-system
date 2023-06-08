@@ -22,6 +22,12 @@ Route::get('/signin', function () {
 Route::get('/signup', function () {
     return view('user.signup');
 });
+Route::get('/dashboard', function () {
+    return view('user.dashboard.uhome');
+});
+Route::get('/general-diary', function () {
+    return view('user.gd.general_diary');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('home');
