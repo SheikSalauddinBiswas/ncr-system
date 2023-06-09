@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('home');
 Route::prefix('user')->group(function (){
 
-    Route::resource('/dashboard',App\Http\Controllers\GdController::class);
+    Route::resource('/dashboard',GdController::class);
+
+
 
 });
