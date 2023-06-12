@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\general_diary;
 
-class GdController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class GdController extends Controller
      */
     public function index()
     {
-        return view('user.dashboard.uhome');
+        return view('user.dashboard.dashboard');
     }
 
     /**
@@ -24,7 +23,7 @@ class GdController extends Controller
      */
     public function create()
     {
-        return view('user.dashboard.create');
+        //
     }
 
     /**
@@ -35,14 +34,7 @@ class GdController extends Controller
      */
     public function store(Request $request)
     {
-        
-        // $gd = general_diary::create($request->all());
-        $gd = $request->all();
-        $request = general_diary::create($gd);
-        return redirect('/user/dashboard');
-        
-        // return $request->all();
-        
+        //
     }
 
     /**

@@ -23,19 +23,14 @@ Route::get('/signin', function () {
 Route::get('/signup', function () {
     return view('user.signup');
 });
-// Route::get('/dashboard', function () {
-//     return view('user.dashboard.uhome');
-// });
-// Route::get('/general-diary', function () {
-//     return view('user.gd.general_diary');
-// });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\UserController::class, 'index'])->name('home');
-Route::prefix('user')->group(function (){
 
+Route::group(['prefix'=>'user','as'=>'user.'],function(){
+
+    Route::get('/',[App\Http\Controllers\DashboardController::class, 'index'])->name('user');
+    
     Route::resource('/dashboard',GdController::class);
-
-
-
 });

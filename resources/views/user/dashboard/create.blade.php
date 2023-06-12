@@ -12,7 +12,8 @@
     <div class="card card-1">
                 <div class="card-body">
                     <h3><p class="text-secondary">Victim Information :</p></h3>
-                    <form method="POST">
+                    <form action="{{ route('user.dashboard.store') }}" method="POST">
+                    {{ csrf_field() }}
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Name" name="name" required>
                         </div>
@@ -30,7 +31,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="number" placeholder="Eergency Mobile" name="emobile" required>
+                                    <input class="input--style-1" type="number" placeholder="Eergency Mobile" name="emobile" >
                                 </div>
                             </div>
                         </div>
@@ -66,7 +67,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="password" placeholder="Password" name="password" required>
+                                    <input class="input--style-1" type="text" placeholder="Profession" name="profession" >
                                 </div>
                             </div>
                         </div>
@@ -103,13 +104,13 @@
                         </div>
                         <div class="input-group">
                             <label for="exampleFormControlTextarea1">Crime Statement  :</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" name="statement" rows="3"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="statement" rows="3" required></textarea>
                         </div>
                         <div class="row row-space">
                             <div class="col-3">
                                 <div class="input-group">
                                     <label for="exampleFormControlTextarea1">Time Of Incident  :</label>
-                                    <input class="input--style-1" type="time"  name="crime_type" required>
+                                    <input class="input--style-1" type="time"  name="crime_time" required>
                                 </div>
                             </div>
                         </div> 
@@ -122,14 +123,14 @@
                             </div>
                             <div class="col-6">
                                     <div class="input-group">
-                                        <input class="input--style-1" type="file" placeholder="Other Document of Product" name="product_document" required>
+                                        <input class="input--style-1" type="file" placeholder="Other Document of Product" name="product_document" >
                                     </div>
                             </div>
                         </div> 
                          <div class="row row-space d-flex">
                             <div class="col-6">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Identifier Data" name="identifier_data" required>
+                                    <input class="input--style-1" type="text" placeholder="Identifier Data" name="identifier_data" >
                                 </div>
                             </div>
                         </div>
@@ -139,6 +140,12 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="addi_data_crime" rows="3"></textarea>
                                 </div>
                         </div>
+                        <div class="col-6">
+                                <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="Status" name="status" required>
+                                </div>
+                        </div>
+                        
 
 
                         <div class="p-t-20">

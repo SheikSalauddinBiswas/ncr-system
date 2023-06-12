@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title">General Diary</h5>
         <p class="card-text">is an important process that allows individuals to record a complaint or report an incident to the police in Bangladesh.</p>
-        <a href="{{route('user.gd.general_diary')}}" class="btn btn-primary">Make a GD</a>
+        <a href="{{route ('user.dashboard.create')}}" class="btn btn-primary">Make a GD</a>
       </div>
     </div>
     
