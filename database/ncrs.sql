@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2023 at 02:15 AM
+-- Generation Time: Jun 12, 2023 at 10:41 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -40,6 +40,50 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `general_diaries`
+--
+
+CREATE TABLE `general_diaries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `fname` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `emobile` varchar(255) DEFAULT NULL,
+  `nid_num` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `union` varchar(255) NOT NULL,
+  `thana` varchar(255) NOT NULL,
+  `area` varchar(255) NOT NULL,
+  `profession` varchar(255) DEFAULT NULL,
+  `crime_type` varchar(255) NOT NULL,
+  `c_city` varchar(255) NOT NULL,
+  `c_union` varchar(255) NOT NULL,
+  `c_thana` varchar(255) NOT NULL,
+  `c_area` varchar(255) NOT NULL,
+  `statement` varchar(255) NOT NULL,
+  `crime_time` varchar(255) NOT NULL,
+  `color_product` varchar(255) NOT NULL,
+  `product_document` varchar(255) DEFAULT NULL,
+  `identifier_data` varchar(255) DEFAULT NULL,
+  `addi_data_crime` varchar(255) DEFAULT NULL,
+  `status` varchar(255) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `general_diaries`
+--
+
+INSERT INTO `general_diaries` (`id`, `name`, `fname`, `email`, `email_verified_at`, `mobile`, `emobile`, `nid_num`, `city`, `union`, `thana`, `area`, `profession`, `crime_type`, `c_city`, `c_union`, `c_thana`, `c_area`, `statement`, `crime_time`, `color_product`, `product_document`, `identifier_data`, `addi_data_crime`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(2, 'Sheik Salauddin Biswas', 'Ataullah Biswas', 'sheik@gmail.com', NULL, '01758514496', '01892394404', '63253434302', 'ctg', 'sxdb', 'fbhfdb', 'bxbxb', 'xbbgxb', 'xbxbxb', 'xbccbxbb', 'xbxbxx', 'dhdbx', 'ghnxd', 'xgnx', '01:37', 'fhnxxnx', NULL, 'xbnx', 'ncxn', 'thjnx', NULL, '2023-06-10 13:15:51', '2023-06-10 13:15:51');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -54,10 +98,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+(25, '2014_10_12_000000_create_users_table', 1),
+(26, '2014_10_12_100000_create_password_resets_table', 1),
+(27, '2019_08_19_000000_create_failed_jobs_table', 1),
+(28, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(29, '2023_06_10_173210_create_general_diaries_table', 1);
 
 -- --------------------------------------------------------
 
@@ -107,13 +152,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Salauddin Biswas', 'salauddinbiswas7@gmail.com', NULL, '$2y$10$3XK/0xrd.aIMWl8DrIUm3uEseDGqnPWhKODObrjnu.ZM3bEVKnw7C', 'ugvqxTv2RyS0CzfEAztatdGMobx7BiN2KejVRwidL9IPTCdbxFTZKykv6gtN', '2023-04-22 07:13:57', '2023-04-22 07:13:57');
-
---
 -- Indexes for dumped tables
 --
 
@@ -123,6 +161,14 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `general_diaries`
+--
+ALTER TABLE `general_diaries`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `general_diaries_email_unique` (`email`),
+  ADD UNIQUE KEY `general_diaries_nid_num_unique` (`nid_num`);
 
 --
 -- Indexes for table `migrations`
@@ -162,10 +208,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `general_diaries`
+--
+ALTER TABLE `general_diaries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -177,7 +229,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
