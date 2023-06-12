@@ -17,7 +17,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('public/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
+  <link rel="stylesheet" href="{{asset('public/css/profile_css.css')}}">
   <link rel="stylesheet" href="{{asset('public/css/vertical-layout-light/style.css')}}">
+  
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('public/images/favicon.png')}}" />
 </head>
@@ -296,11 +298,18 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{url('/admin')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('/admin/general-diary')}}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">General Diary</span>
+            </a>
+          </li>
+          
         </ul>
       </nav>
           <div class="main-panel">
@@ -389,6 +398,9 @@
   <script src="{{asset('public/js/dashboard.js')}}"></script>
   <script src="{{asset('public/js/Chart.roundedBarCharts.js')}}"></script>
   <!-- End custom js for this page-->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
 </body>
 
 </html>

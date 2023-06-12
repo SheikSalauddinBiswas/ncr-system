@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GdController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\GeneraldiaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,5 @@ Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
 
     Route::get('/',[App\Http\Controllers\AdminDashboardController::class, 'index'])->name('admin');
     
-    
+    Route::resource('/general-diary',GeneraldiaryController::class);
 });
