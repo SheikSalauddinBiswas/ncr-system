@@ -19,20 +19,22 @@
 <div class="col-md-4 mb-3">
 <div class="card">
 <div class="card-body">
-@foreach($data as $row)
+
 <div class="d-flex flex-column align-items-center text-center">
+
 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
 <div class="mt-3">
-<h4>{{ $row->name }}</h4>
-<p class="text-secondary mb-1">Father Name :{{ $row->fname }}</p>
-<p class="text-muted font-size-sm">Mobile :{{ $row->mobile }} </p>
-<p class="text-muted font-size-sm">{{ $row->city }},{{ $row->union }}</p>
-<p class="text-muted font-size-sm">{{ $row->thana }},{{ $row->area }}</p>
+<h4>{{ $data['name'] }}</h4>
+<p class="text-secondary mb-1">Father Name : {{ $data['fname'] }}</p>
+<p class="text-muted font-size-sm">Mobile : {{ $data['mobile'] }}</p>
+<p class="text-muted font-size-sm">NID No : {{ $data['nid_num'] }}</p>
+<p class="text-muted font-size-sm">{{ $data['city'] }},{{ $data['union'] }}</p>
+<p class="text-muted font-size-sm">{{ $data['thana'] }},{{ $data['area'] }}</p>
 <button class="btn btn-primary">Follow</button>
 <button class="btn btn-outline-primary">Message</button>
 </div>
 </div>
-@endforeach
+
 </div>
 </div>
 <div class="card mt-3">
