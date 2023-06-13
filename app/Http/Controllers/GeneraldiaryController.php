@@ -59,6 +59,7 @@ class GeneraldiaryController extends Controller
     public function edit($id)
     {
         $data = general_diary::find($id) ;
+        // return ($data);
         return view('admin.general_diary.view',compact('data'));
     }
 

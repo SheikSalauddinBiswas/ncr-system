@@ -14,28 +14,25 @@
         <div class="container">
 <div class="main-body">
 
-<nav aria-label="breadcrumb" class="main-breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-<li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
-<li class="breadcrumb-item active" aria-current="page">User Profile</li>
-</ol>
-</nav>
 
 <div class="row gutters-sm">
 <div class="col-md-4 mb-3">
 <div class="card">
 <div class="card-body">
+@foreach($data as $row)
 <div class="d-flex flex-column align-items-center text-center">
 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
 <div class="mt-3">
-<h4>John Doe</h4>
-<p class="text-secondary mb-1">Full Stack Developer</p>
-<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+<h4>{{ $row->name }}</h4>
+<p class="text-secondary mb-1">Father Name :{{ $row->fname }}</p>
+<p class="text-muted font-size-sm">Mobile :{{ $row->mobile }} </p>
+<p class="text-muted font-size-sm">{{ $row->city }},{{ $row->union }}</p>
+<p class="text-muted font-size-sm">{{ $row->thana }},{{ $row->area }}</p>
 <button class="btn btn-primary">Follow</button>
 <button class="btn btn-outline-primary">Message</button>
 </div>
 </div>
+@endforeach
 </div>
 </div>
 <div class="card mt-3">
@@ -118,6 +115,7 @@ Bay Area, San Francisco, CA
 </div>
 </div>
 </div>
+
 <div class="row gutters-sm">
 <div class="col-sm-6 mb-3">
 <div class="card h-100">
