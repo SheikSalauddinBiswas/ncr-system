@@ -52,10 +52,10 @@
 <hr>
 <div class="row">
 <div class="col-sm-3">
-<h6 class="mb-0">Email</h6>
+<h6 class="mb-0">Email </h6>
 </div>
 <div class="col-sm-9 text-secondary">
-<a href="{{ $data['email'] }}" class="__cf_email__" data-cfemail="e1878891a18b948a8c9489cf808d">[email&#160;protected]</a>
+{{ $data['email'] }}
 </div>
 </div>
 <hr>
@@ -68,6 +68,14 @@
 </div>
 </div>
 <hr>
+<div class="row">
+<div class="col-sm-3">
+<h6 class="mb-0">GD No :</h6>
+</div>
+<div class="col-sm-9 text-secondary">
+{{ $data['gd_no'] }}
+</div>
+</div>
 </div>
 </div>
 
@@ -85,7 +93,7 @@
 <small>Crime Statement : {{ $data['statement'] }}</small>
 <br>
 <small>Time : {{ $data['crime_time'] }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-    Date : 
+    Date : {{ $data->crime_date }}
 </small>
 
 </div>
@@ -95,26 +103,63 @@
 <div class="card h-100">
 <div class="card-body">
 <h6 class="d-flex align-items-center mb-3">Identification Data :</h6>
-<small>Web Design</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>Website Markup</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>One Page</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>Mobile Template</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<small>Backend API</small>
-<div class="progress mb-3" style="height: 5px">
-<div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+<small>Color Of the Product : {{ $data['color_product'] }}</small>
+<br>
+<!-- <small>Product Document :<img src="{{ asset($data->product_document) }}" alt="" width="20%"></small> -->
+
+
+<small>Product Document :
+    
+<button type="button"
+            class="btn btn-secondary btn-sm"
+            data-toggle="modal"
+            data-target="#exampleModal">
+        Show Document
+    </button>
+    <!-- Modal -->
+    <div class="modal fade"
+         id="exampleModal"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+ 
+                <!-- Add image inside the body of modal -->
+                <div class="modal-body">
+                    <img id="image"
+                         src=
+"{{ asset($data->product_document) }}"
+                         alt="Click on button" width="450px" />
+                </div>
+ 
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</small>
+
+
+
+
+
+
+
+<br>
+<small>Identifier Data : {{ $data['identifier_data'] }}</small>
+<br>
+<small>Additional Data Of Crime : {{ $data['addi_data_crime'] }}</small>
+<br>
+<small class="text-danger">Status : <u>{{ $data['status'] }}</u></small>
+<br>
 </div>
 </div>
 </div>

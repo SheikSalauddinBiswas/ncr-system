@@ -12,7 +12,7 @@
     <div class="card card-1">
                 <div class="card-body">
                     <h3><p class="text-secondary">Victim Information :</p></h3>
-                    <form action="{{ route('user.dashboard.store') }}" method="POST">
+                    <form action="{{ route('user.dashboard.store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="Name" name="name" required>
@@ -38,7 +38,7 @@
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="NID Number" name="nid_num" required>
+                                    <input class="input--style-1" type="number" placeholder="NID Number" name="nid_num" required>
                                 </div>
                             </div>
                         </div>
@@ -106,11 +106,17 @@
                             <label for="exampleFormControlTextarea1">Crime Statement  :</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="statement" rows="3" required></textarea>
                         </div>
-                        <div class="row row-space">
+                        <div class="row row-space d-flex">
                             <div class="col-3">
                                 <div class="input-group">
                                     <label for="exampleFormControlTextarea1">Time Of Incident  :</label>
                                     <input class="input--style-1" type="time"  name="crime_time" required>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <label for="exampleFormControlTextarea1">Date Of Incident  :</label>
+                                    <input class="input--style-1" type="date"  name="crime_date" required>
                                 </div>
                             </div>
                         </div> 
@@ -140,9 +146,9 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="addi_data_crime" rows="3"></textarea>
                                 </div>
                         </div>
-                        <div class="col-6">
+                        <div class="">
                                 <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Status" name="status" required>
+                                    <input class="input--style-1"  placeholder="Status" value="pending" name="status" type="hidden" required>
                                 </div>
                         </div>
                         

@@ -38,6 +38,14 @@ class GdController extends Controller
         
         // $gd = general_diary::create($request->all());
         $gd = $request->all();
+        $fileName = time().$request->file('product_document')->getClientOriginalName();
+        $path = $request->file('product_document')->storeAs('images',$fileName,'public');
+        $gd["product_document"] = 'storage/app/public/'.$path;
+
+        $GDno = random_int(100000, 999999);
+        $gd["gd_no"] =$GDno; 
+   
+
         $request = general_diary::create($gd);
         return redirect('/user/dashboard');
         

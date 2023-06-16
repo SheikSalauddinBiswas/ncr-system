@@ -15,6 +15,7 @@ class CreateGeneralDiariesTable extends Migration
     {
         Schema::create('general_diaries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('gd_no');
             $table->string('name');
             $table->string('fname');
             $table->string('email')->unique();
@@ -35,6 +36,7 @@ class CreateGeneralDiariesTable extends Migration
             $table->string('c_area');
             $table->string('statement');
             $table->string('crime_time');
+            $table->string('crime_date');
 
             $table->string('color_product');
             $table->string('product_document');

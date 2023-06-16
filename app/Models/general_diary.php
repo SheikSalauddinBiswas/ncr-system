@@ -9,6 +9,7 @@ class general_diary extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'gd_no',
         'name',
         'fname',
         'email',
@@ -27,6 +28,7 @@ class general_diary extends Model
         'c_area',
         'statement',
         'crime_time',
+        'crime_date',
         'color_product',
         'product_document',
         'identifier_data',

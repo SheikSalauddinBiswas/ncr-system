@@ -82,6 +82,9 @@ class GeneraldiaryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = general_diary::find($id) ;
+        $res = $user->delete();
+        if($res)
+         return redirect('/admin/general-diary') ;
     }
 }
