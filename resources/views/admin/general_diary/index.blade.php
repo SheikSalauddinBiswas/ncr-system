@@ -39,7 +39,7 @@
                           <td>{{ $row->gd_no }}</td>
                           <td>{{ $row->crime_time }}</td>
                           <td>
-                            <a href="{{ route('admin.general-diary.edit',$row->id) }}"><label class="badge badge-success">View GD</label></a>
+                            <a href="{{ route('admin.general-diary.show',$row->id) }}"><label class="badge badge-success">View GD</label></a>
                             <form action="{{ route('admin.general-diary.destroy',$row->id) }}" method="POST" style="display:inline;">
                             {{ method_field('DELETE') }} {{ csrf_field() }}
                             <button type="submit" class="badge badge-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete GD</button>

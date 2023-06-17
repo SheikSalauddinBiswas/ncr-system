@@ -158,7 +158,27 @@
 <br>
 <small>Additional Data Of Crime : {{ $data['addi_data_crime'] }}</small>
 <br>
-<small class="text-danger">Status : <u>{{ $data['status'] }}</u></small>
+<small class="text-danger">
+    Status : <u>{{ $data['status'] }}</u> 
+
+    <form action="{{ route('admin.general-diary.edit',$data->id) }}" method="GET" style="display:inline;">
+    {{ csrf_field() }}
+        <select class="select" name="status" id="status">
+            <option value="pending">Pending</option>
+            <option value="investigating">Investigating</option>
+            <option value="success">Success</option>
+            <option value="decline">Decline</option>
+        </select>
+    <button type="submit" class="badge badge-warning">Update</button>
+    </form>
+
+
+
+
+
+    
+    <!-- <a href="" class="btn btn-success btn-sm">Edit </a> -->
+</small>
 <br>
 </div>
 </div>

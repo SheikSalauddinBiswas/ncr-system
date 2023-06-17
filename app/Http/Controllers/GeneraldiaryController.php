@@ -47,7 +47,8 @@ class GeneraldiaryController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = general_diary::find($id) ;
+        return view('admin.general_diary.view',compact('data'));
     }
 
     /**
@@ -56,10 +57,14 @@ class GeneraldiaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $data = general_diary::find($id) ;
-        return view('admin.general_diary.view',compact('data'));
+        $user = general_diary::find($id) ;
+        $user->status = $request->input('status') ;
+        
+        $res = $user->update(); 
+        if($res)
+           return redirect('admin/general-diary') ;
     }
 
     /**
