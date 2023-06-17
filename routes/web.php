@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GdController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\GeneraldiaryController;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------

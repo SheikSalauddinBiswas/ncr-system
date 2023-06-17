@@ -59,9 +59,14 @@ class GdController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $gd_no = $request->input('search');
+        
+        $all = general_diary::where ('gd_no',$gd_no)->get() ;
+
+        return view('user.dashboard.view',compact('all'));
+        
     }
 
     /**

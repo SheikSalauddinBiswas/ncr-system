@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 10:41 PM
+-- Generation Time: Jun 17, 2023 at 10:36 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -45,18 +45,19 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `general_diaries` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `gd_no` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `fname` varchar(255) DEFAULT NULL,
+  `fname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `mobile` varchar(255) NOT NULL,
-  `emobile` varchar(255) DEFAULT NULL,
+  `emobile` varchar(255) NOT NULL,
   `nid_num` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
   `union` varchar(255) NOT NULL,
   `thana` varchar(255) NOT NULL,
   `area` varchar(255) NOT NULL,
-  `profession` varchar(255) DEFAULT NULL,
+  `profession` varchar(255) NOT NULL,
   `crime_type` varchar(255) NOT NULL,
   `c_city` varchar(255) NOT NULL,
   `c_union` varchar(255) NOT NULL,
@@ -64,10 +65,11 @@ CREATE TABLE `general_diaries` (
   `c_area` varchar(255) NOT NULL,
   `statement` varchar(255) NOT NULL,
   `crime_time` varchar(255) NOT NULL,
+  `crime_date` varchar(255) NOT NULL,
   `color_product` varchar(255) NOT NULL,
-  `product_document` varchar(255) DEFAULT NULL,
-  `identifier_data` varchar(255) DEFAULT NULL,
-  `addi_data_crime` varchar(255) DEFAULT NULL,
+  `product_document` varchar(255) NOT NULL,
+  `identifier_data` varchar(255) NOT NULL,
+  `addi_data_crime` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -78,8 +80,9 @@ CREATE TABLE `general_diaries` (
 -- Dumping data for table `general_diaries`
 --
 
-INSERT INTO `general_diaries` (`id`, `name`, `fname`, `email`, `email_verified_at`, `mobile`, `emobile`, `nid_num`, `city`, `union`, `thana`, `area`, `profession`, `crime_type`, `c_city`, `c_union`, `c_thana`, `c_area`, `statement`, `crime_time`, `color_product`, `product_document`, `identifier_data`, `addi_data_crime`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Sheik Salauddin Biswas', 'Ataullah Biswas', 'sheik@gmail.com', NULL, '01758514496', '01892394404', '63253434302', 'ctg', 'sxdb', 'fbhfdb', 'bxbxb', 'xbbgxb', 'xbxbxb', 'xbccbxbb', 'xbxbxx', 'dhdbx', 'ghnxd', 'xgnx', '01:37', 'fhnxxnx', NULL, 'xbnx', 'ncxn', 'thjnx', NULL, '2023-06-10 13:15:51', '2023-06-10 13:15:51');
+INSERT INTO `general_diaries` (`id`, `gd_no`, `name`, `fname`, `email`, `email_verified_at`, `mobile`, `emobile`, `nid_num`, `city`, `union`, `thana`, `area`, `profession`, `crime_type`, `c_city`, `c_union`, `c_thana`, `c_area`, `statement`, `crime_time`, `crime_date`, `color_product`, `product_document`, `identifier_data`, `addi_data_crime`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '475206', 'Sheik Salauddin Biswas', 'Ataullah Biswas', 'salauddi1biswas@gmail.com', NULL, '01758514496', '01892394404', '632534343021', 'Chattogram', 'Hathazari', 'Bayzid', 'Oxygen', 'Student', 'Robbery', 'Chattogram', 'Hathazari', 'Bayzid', 'Oxygen', 'I was going to school and the incident happened', '14:30', '2023-06-18', 'Black', 'storage/app/public/images/1686947339pexels-imad-clicks-11772523.jpg', 'He is small guy', 'I think he took my phone', 'investigating', NULL, '2023-06-16 14:28:59', '2023-06-17 13:02:11'),
+(2, '326527', 'Nur  Uddin Rabby', 'tjhnttjhtth', 'sheik@gmail.com', NULL, '35673673734', '464636765', '76346736673467', 'Chattogram', 'Hathazari', 'Bayzid', 'Oxygen', 'Student', 'Robbery', 'Chattogram', 'Hathazari', 'Bayzid', 'Oxygen', 'fymgsmn gzdfjnmzsjmn', '05:08', '2023-06-13', 'xmm xm', 'storage/app/public/images/16870000105769591.jpg', 'He is small guy', 'gzxnfmjnmfx', 'success', NULL, '2023-06-17 05:06:50', '2023-06-17 06:00:42');
 
 -- --------------------------------------------------------
 
@@ -98,11 +101,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(25, '2014_10_12_000000_create_users_table', 1),
-(26, '2014_10_12_100000_create_password_resets_table', 1),
-(27, '2019_08_19_000000_create_failed_jobs_table', 1),
-(28, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(29, '2023_06_10_173210_create_general_diaries_table', 1);
+(45, '2014_10_12_000000_create_users_table', 1),
+(46, '2014_10_12_100000_create_password_resets_table', 1),
+(47, '2019_08_19_000000_create_failed_jobs_table', 1),
+(48, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(49, '2023_06_10_173210_create_general_diaries_table', 1);
 
 -- --------------------------------------------------------
 
@@ -217,7 +220,7 @@ ALTER TABLE `general_diaries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

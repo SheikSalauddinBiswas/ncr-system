@@ -17,20 +17,17 @@
   </head>
 <body>
     
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-md  bg-secondary">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" href="{{url('user/dashboard')}}">NCR-System</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      
         
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" action="{{ url('user/dashboard/show') }}" method="GET" >
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success btn-dark" type="submit">Search</button>
       </form>
     </div>
@@ -59,6 +56,29 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <!-- plugins:js -->
+  <script src="{{asset('public/vendor/js/vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{asset('public/vendor/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('public/vendor/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{asset('public/vendor/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+  <script src="{{asset('public/js/dataTables.select.min.js')}}"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{asset('public/js/off-canvas.js')}}"></script>
+  <script src="{{asset('public/js/hoverable-collapse.js')}}"></script>
+  <script src="{{asset('public/js/template.js')}}"></script>
+  <script src="{{asset('public/js/settings.js')}}"></script>
+  <script src="{{asset('public/js/todolist.js')}}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{{asset('public/js/dashboard.js')}}"></script>
+  <script src="{{asset('public/js/Chart.roundedBarCharts.js')}}"></script>
+  <!-- End custom js for this page-->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
 </body>
 </html>
